@@ -1,0 +1,7 @@
+pandas  
+scikit-learn
+scipy 
+twelvedata 
+pyportfolioopt
+dash==1.19.0
+
