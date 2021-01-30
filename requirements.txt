@@ -4,4 +4,5 @@ scipy
 twelvedata 
 pyportfolioopt
 dash==1.19.0
-
+dash_core_components
+dash_html_components
