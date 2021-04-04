@@ -28,7 +28,7 @@ def portfolio_optimization():
         # print(mu, cov)
         ef = efficient_frontier.EfficientFrontier(mu, cov, weight_bounds=(0, 1))
         ef.add_objective(objective_functions.L2_reg, gamma=1)
-        ef.max_sharpe(0.002)
+        ef.max_sharpe(0.02)
         weights_portfolio = ef.weights
 
         # ef.max_sharpe(risk_free_rate=0.002)
@@ -76,8 +76,9 @@ def portfolio_returns(weights, mus):
 
 def visualize_return_variance(mus, cov, optimal_weights=None):
     from itertools import product
-    x = np.linspace(0, 1, 100)
-    w = np.asarray(np.meshgrid( * [x] * len(mus))).T.reshape(-1, len(mus))
+    #x = np.linspace(0, 1, 100)
+    #w = np.asarray(np.meshgrid([x] * len(mus))).T.reshape(-1, len(mus))
+    w = np.random.uniform(4, 1, len(mus)*100).reshape(100, len(mus))
     w = w / w.sum(axis=1)[:, np.newaxis]
     # print(w[:10])
     ret = portfolio_returns(w, mus)

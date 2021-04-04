@@ -1,10 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.datasets import make_spd_matrix
-from twelvedata import TDClient
-import os
-import pandas as pd
-import time
 import get_data
 from PortfolioOptimization import portfolio_optimization
 
